@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ELO.AO — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>ELO.AO</h1>
+  </header>
+
+  <main class="container">
+    <section id="auth-section" class="card">
+      <h2>Entrar / Registar</h2>
+      <div class="forms">
+        <div>
+          <h3>Entrar</h3>
+          <input id="login-email" type="email" placeholder="Email" />
+          <input id="login-password" type="password" placeholder="Senha" />
+          <button id="btn-login">Entrar</button>
+        </div>
+
+        <div>
+          <h3>Registar</h3>
+          <input id="signup-email" type="email" placeholder="Email" />
+          <input id="signup-password" type="password" placeholder="Senha (min 6)" />
+          <button id="btn-signup">Registar</button>
+        </div>
+      </div>
+
+      <p id="auth-msg" class="muted"></p>
+    </section>
+
+    <section id="profile-section" class="card hidden">
+      <h2>Perfil</h2>
+      <p><strong>Email:</strong> <span id="profile-email"></span></p>
+      <p><strong>User ID:</strong> <span id="profile-uid"></span></p>
+      <button id="btn-signout">Sair</button>
+    </section>
+  </main>
+
+  <footer class="footer">ELO.AO • Rede social simples</footer>
+
+  <script>
+  // Configuração Supabase (coloca a tua chave APÓS fazer download)
+  const SUPABASE_URL = "https://tsweiiqgmfbnexrhlfwf.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzd2VpaXFnbWZibmV4cmhsZndmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3MjI4MDUsImV4cCI6MjA3ODI5ODgwNX0.bafXLhrBZ4SIthbubZ3O1xnXv8gdS6UZSLyW4EPoeEI";
+  const supabase = supabaseJs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
